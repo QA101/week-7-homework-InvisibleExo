@@ -18,7 +18,6 @@ public class GreetingsUtilTest {
 		//Checking that object is null and not null after creation.
 		assertNull(gu);
 		gu = new GreetingsUtil();
-		assertNotNull(gu);
 		su = new GreetingsUtil();
 	}
 
@@ -30,6 +29,7 @@ public class GreetingsUtilTest {
 	// The main test coverage, which could cover about 90-100% in this block
 	@Test
 	public void test() {
+		assertNotNull(gu);
 		assertEquals(gu.GoodBye(), "You already said that");
 		assertEquals(gu.Hello(), "Hi!");
 		assertEquals(gu.GoodBye(), "bye");
@@ -57,9 +57,9 @@ public class GreetingsUtilTest {
 		
 		
 	}
-	//Integration Version Testing Style Attempt with Test3 - test 4
+	//Integration Version Testing Style Attempt?
 	@Test
-	public void test3() {
+	public void testThereAndBackAgain() {
 		su.Hello();
 		su.GoodBye();
 		assertThat(su.currentState, containsString("going"));
@@ -74,7 +74,7 @@ public class GreetingsUtilTest {
 	}
 	
 	@Test
-	public void test4() {
+	public void testLeavingAndComingBack() {
 		su.GoodBye();
 		su.Hello();
 		assertThat(su.currentState, containsString("coming"));
@@ -88,7 +88,7 @@ public class GreetingsUtilTest {
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 		//Not nesscesary to do this(next line.)
-		//gu = null;
+		gu = null;
 	}
 
 	
